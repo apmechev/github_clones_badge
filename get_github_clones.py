@@ -35,6 +35,12 @@ def get_git_clones(user='apmechev',repo=''):
     creds=get_creds()
     url="https://api.github.com/repos/"+user+"/"+repo+"/traffic/clones"
     output=requests.get(url,auth=HTTPBasicAuth(creds[0],creds[1]))
+    if output.__getstate__()['status_code'] != 200:
+        if output.__getstate__()['status_code'] == 401:
+            print("Invalid Username/Password!")
+        elif output.__getstate__()['status_code'] == 403: 
+            print("Empty Password!")
+        output.raise_for_status()
     return output
 
 glrtc=pickle.load(open(repo+'_clones.pkl','r'))
