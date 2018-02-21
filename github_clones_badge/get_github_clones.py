@@ -114,13 +114,6 @@ class badge_creator(object):
         mopen.retrieve("https://img.shields.io/badge/clones-"+self.count+"-"+self.color+".svg",dest_path+"/"+self.clones.repo+"_clones.svg")
         print("done")
 
-user='apmechev'
-
-if len(sys.argv)>1:
-    repo=sys.argv[1]
-else:
-    repo="GRID_picastools"
-
 class MyOpener(FancyURLopener):
     version = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11'
 
