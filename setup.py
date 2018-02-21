@@ -8,7 +8,7 @@ setup(
     ],
   package_data={'github_clones_badge': ['github_clones_badge/data/']},
   include_package_data=True,
-  version = '0.1.1',
+  version = '0.1.2',
   description = 'A small package to create badges that count github clones',
   long_description="A python package that automates the pulling of traffic information using the GitHub API, storing this information and creating badges that can be uploaded to the repository's README.md",
   author = 'Alexandar Mechev',

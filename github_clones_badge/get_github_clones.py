@@ -4,7 +4,11 @@ import json
 import pickle 
 import sys
 import os
-from urllib import FancyURLopener
+try:
+    from urllib import FancyURLopener
+except ImportError:
+    from urllib.request import FancyURLopener
+
 import crontab
 
 global DATADIR
