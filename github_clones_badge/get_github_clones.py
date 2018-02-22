@@ -99,10 +99,21 @@ class git_clones_counter(object):
             self.count=str(s/1000)+"M+"
             self.color="brightgreen"
  
+class nonestr(str):
+    """Converts Nones to a ''
+    """
+    def __new__(cls, value):
+        if value==None:
+            return str.__new__(cls,"")
+        return value
+
+
 
 class badge_creator(object):
     def __init__(self,repo,username=None,password=None,repouser=None):
         self.clones=git_clones_counter(repo,username,password)
+        self.repo=repo
+        self.repouser=repouser
         if repouser:
             new_clones=self.clones.get_git_clones_json(username=repouser)
         else:
@@ -114,9 +125,13 @@ class badge_creator(object):
         self.color=self.clones.color
 
     def download_badge(self,dest_path="/var/www/html/apmechev.com/public_html/img/git_repos/"):
+        """
+        """
         mopen = MyOpener()
-        mopen.retrieve("https://img.shields.io/badge/clones-"+self.count+"-"+self.color+".svg",dest_path+"/"+self.clones.repo+"_clones.svg")
-        print("done")
+        mopen.retrieve("https://img.shields.io/badge/clones-"+self.count+"-"+self.color+".svg",dest_path+"/"+nonestr(self.repouser)+self.clones.repo+"_clones.svg")
+        data=pickle.load(open(DATADIR+self.repo+'_clones.pkl','rb'))
+        start_date=min(data.keys()).split('T')[0]
+        print('[![alt text](http://apmechev.com/img/git_repos/'+nonestr(self.repouser)+self.repo+'_clones.svg "github clones since '+start_date+'")](https://github.com/apmechev/github_clones_badge)')
 
 class MyOpener(FancyURLopener):
     version = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11'
