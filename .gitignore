@@ -1,3 +1,7 @@
+#Badges and Pickles
+github_clones_badge/badges/*svg
+github_clones_badge/data/*pkl
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -5,6 +9,7 @@ __pycache__/
 
 # C extensions
 *.so
+
 
 # Distribution / packaging
 .Python
