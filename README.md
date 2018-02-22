@@ -26,7 +26,7 @@ pip install github_clones_badge
 
 ```
 
-#Running for a repo that you are a collaborator of but don't own
+# Running for a repo that you are a collaborator of but don't own, once
 
 In this case, the repouser's name is appended to the beginning of the badge name. This means one reponame for multiple users can be 'tracked'. 
 ```python

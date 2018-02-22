@@ -6,9 +6,11 @@ setup(
    'requests == 2.18.4',
    'python-crontab'
     ],
-  package_data={'github_clones_badge': ['github_clones_badge/data/']},
+  data_files=[('data',['github_clones_badge/data']),
+              ('badges',['github_clones_badge/badges'])
+    ],
   include_package_data=True,
-  version = '0.1.2',
+  version = '0.1.3',
   description = 'A small package to create badges that count github clones',
   long_description="A python package that automates the pulling of traffic information using the GitHub API, storing this information and creating badges that can be uploaded to the repository's README.md",
   author = 'Alexandar Mechev',
