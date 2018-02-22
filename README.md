@@ -1,5 +1,6 @@
 ![alt text](http://apmechev.com/img/git_repos/github_clones_badge_clones.svg "github clones")
 [![PyPI version](https://badge.fury.io/py/github-clones-badge.svg)](https://badge.fury.io/py/github-clones-badge)
+[![Build Status](https://travis-ci.org/apmechev/github_clones_badge.svg?branch=master)](https://travis-ci.org/apmechev/github_clones_badge)
 
 # github_clones_badge
 
