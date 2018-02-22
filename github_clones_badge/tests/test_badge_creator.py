@@ -1,6 +1,6 @@
 import os
 import unittest
-from github_clones_badge import git_clones_counter
+from github_clones_badge.get_github_clones  import git_clones_counter
 
 
 class git_clones_counterTest(unittest.TestCase):
