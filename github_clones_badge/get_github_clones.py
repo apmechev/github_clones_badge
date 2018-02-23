@@ -34,6 +34,8 @@ class git_clones_counter(object):
     def __init__(self, reponame, username=None, password=None):
         self.count=0
         self.color='gray'
+        self.username=username
+        self.password=password
         if not username:
             self.username=git_creds( gitfile='git_creds').username
         if not password:
