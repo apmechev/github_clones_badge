@@ -6,8 +6,8 @@ setup(
    'requests == 2.18.4',
    'python-crontab'
     ],
-  data_files=[('data',['github_clones_badge/data']),
-              ('badges',['github_clones_badge/badges'])
+  data_files=[('data',['github_clones_badge/data/README.md']),
+              ('badges',['github_clones_badge/badges/README.md'])
     ],
   include_package_data=True,
   version = '0.1.3',
