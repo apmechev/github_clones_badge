@@ -3,7 +3,7 @@ setup(
   name = 'github_clones_badge',
   packages = ['github_clones_badge'], 
   install_requires=[
-   'requests == 2.18.4',
+   'requests',
    'python-crontab'
     ],
   data_files=[('data',['github_clones_badge/data/README.md']),
